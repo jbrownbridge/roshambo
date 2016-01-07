@@ -29,7 +29,7 @@ var mimeTypes = {
 
 exports.serveStatic = function(response, postData, cookies, pathname) {
   var localFile = path.join(conf.static_dir, pathname);
-  path.exists(localFile, function (exists) {
+  fs.exists(localFile, function (exists) {
     if (!exists) {
       //TODO: This returns true for Directories too
       exports.errorResponse(response, 404);
