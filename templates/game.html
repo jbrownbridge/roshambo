@@ -94,8 +94,12 @@
 				on_opponent_found();
 			})
 		}
-
-		$(function(){
+	</script>
+	<title>Roshambo</title>
+</head>
+<body>
+	<script>
+		$(document).ready(function(){
 			$("#game-url").text(location.href);
 			check_for_opponent();
 			// Preload:
@@ -105,9 +109,6 @@
 			});
 		})
 	</script>
-	<title>Roshambo</title>
-</head>
-<body>
 	<div id="waiting">
 		<h1>Waiting for your opponent</h1>
 		<div id="link-prompt">
