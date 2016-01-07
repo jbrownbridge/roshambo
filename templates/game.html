@@ -90,8 +90,17 @@
 		}
 
 		function check_for_opponent(){
-			$.get("wait",function(data){
-				on_opponent_found();
+			$.ajax({
+				url: "wait",
+				type: "GET",
+				success: function(data) {
+					on_opponent_found();
+				},
+				error: function(xhr, textStatus, errorThrown) {
+					//try again
+					$.ajax(this);
+					return;
+				}
 			})
 		}
 	</script>
